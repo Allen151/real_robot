@@ -3,58 +3,11 @@
 <head>
 <meta name="keywords" content="">
 <meta name="description" content="">
-<SCRIPT language="JavaScript">
-<!--
 
-var layers = document.layers, style = document.all, both = layers || style, idme=908601;
-if (layers) { layerRef = 'document.layers'; styleRef = ''; } if (style) { layerRef = 'document.all'; styleRef = '.style'; }
-
-function writeOnText(obj, str) {
-if (layers) with (document[obj]) { document.open(); document.write(str); document.close(); }
-if (style) eval(obj+'.innerHTML= str');
-}
-//以下是输出的内容，自己修改即可。
-var dispStr = new Array(
-"<font color=red size=15>如果上天让我许三个愿望</font><br><font color=green size=15>第一个是今生今世和你在一起，</font><br><font color=red size=10>第二个是来生来世和你在一起，</font><br><font color=blue size=15>第三个是永生永世和你不分离。</font><br><font color=red size=10>如果你走了，我会在泪水里爱你；</font><br><font color=yellow size=15>如果你的心死了，我会在生命里爱你；</font><br><font color=red size=15>如果生命消失了，我会在轮回里爱你；</font><br><font color=green size=15>如果世界消失了，我会在天堂里爱你。</font>"
-);
-
-var overMe=0;
-
-function txtTyper(str, idx, idObj, spObj, clr1, clr2, delay, plysnd) {
-var tmp0 = tmp1 = '', skip = 0;
-if (both && idx <= str.length) {
-if (str.charAt(idx) == '<') { while (str.charAt(idx) != '>') idx++; idx++; }
-if (str.charAt(idx) == '&' && str.charAt(idx+1) != ' ') { while (str.charAt(idx) != ';') idx++; idx++; }
-tmp0 = str.slice(0,idx);
-tmp1 = str.charAt(idx++);
-
-if (overMe==0 && plysnd==1) {
-if (navigator.plugins[0]) {
-if (navigator.plugins["LiveAudio"][0].type=="audio/basic" && navigator.javaEnabled()) {
-document.embeds[0].stop();
-setTimeout("document.embeds[0].play(false)",100); }
-} else if (document.all) {
-ding.Stop();
-setTimeout("ding.Run()",100);
-}
-overMe=1;
-} else overMe=0;
-
-writeOnText(idObj, "<span class="+spObj+"><font color='"+clr1+"'>"+tmp0+"</font><font color='"+clr2+"'>"+tmp1+"</font></span>");
-setTimeout("txtTyper('"+str+"', "+idx+", '"+idObj+"', '"+spObj+"', '"+clr1+"', '"+clr2+"', "+delay+" ,"+plysnd+")",delay);
-}
-}
-
-function init() {
-txtTyper(dispStr[0], 0, 'ttl0', 'ttl1', '#339933', '#99FF33', 50, 0);
-}
-
-// -->
-</SCRIPT>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>我永远属于你！</title>
 <style type="text/css">
-<!--
+
 body {
 	background-image: url(2da936856ffa20935c9aa4310e42f213.jpg);
 }
@@ -70,14 +23,16 @@ body {
 body,td,th {
 	font-family: 方正静蕾简体;
 }
--->
-</style></head>
+
+</style>
+
+</head>
 
 <body bgcolor="#fef4d9" onload="onload=init()">
 <br/><br/><br/><br/><br/><br/>
 <!--音乐-->
 <p class="abc">听说你喜欢听这首歌</p><br/ >
-<audio controls="controls" autoplay="autoplay">
+<audio controls="controls" autoplay="autoplay" loop="loop">
    <source src="zhni.mp3" type="audio/mpeg">
 </audio>
 </hr>
@@ -115,6 +70,17 @@ body,td,th {
 <div align="center"> 
 	<p><img src="4.png" width="1136" height="536" /></p>
 </div>
+
+<div align=center>
+	<img id="img" src="image/he-1.jpg" style="height:580px"><br />
+	<button id="up">上一张</button>
+	<button id="down">下一张</button>
+</div>
+
+
+<script type="text/javascript" src="js/changepic.js">
+</script>
+
 
 </body>
 
